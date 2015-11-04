@@ -1,0 +1,45 @@
+<h2>Lista de cidades</h2>
+<div>
+    <div class="row">
+        <div class="col-md-8">
+            <a href="#/cidades/editor" class="btn btn-default">
+                <span aria-hidden="true" class="glyphicon glyphicon-plus"></span> 
+                Cadastrar
+            </a>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group">
+                <input class="form-control" ng-model="q" placeholder="Pesquisar..." type="text">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-search"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<hr noshade></hr>
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>UF</th>
+            <th>Nome</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="cidade in cidades | filter:q | orderBy:estado.uf">
+            <td>{{$index}}</td>
+            <td>{{cidade.estado.uf}}</td>
+            <td>{{cidade.nome}}</td>
+            <td>
+                <button class="btn btn-danger btn-xs" ng-click="excluir($index)" type="button">
+                    <span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+                </button>
+                <button class="btn btn-default btn-xs" ng-click="editar($index)" type="button">
+                    <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

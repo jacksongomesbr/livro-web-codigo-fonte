@@ -1,0 +1,19 @@
+<h2>Cadastro de cidades</h2>
+
+<form class="form">
+    <div class="form-group">
+        <label for="nomeDaCidade">Nome
+        </label>
+        <input class="form-control" id="nomeDaCidade" ng-model="cidade.nome" placeholder="Nome da cidade" required type="text">
+    </div>
+    <div class="form-group">
+        <label for="estado">Estado</label>
+        <select class="form-control" ng-model="cidade.estado.uf">
+            <option ng-repeat="estado in estados" value="{{estado.uf}}">{{estado.nome}}</option>
+        </select>
+    </div>
+    <div>
+        <button class="btn btn-primary" ng-click="salvar(cidade)" type="button">Salvar</button>
+        <button class="btn btn-default" ng-click="cancelar()" type="button">Cancelar</button>
+    </div>
+</form>
