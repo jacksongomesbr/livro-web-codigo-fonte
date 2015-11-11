@@ -1,0 +1,20 @@
+{
+  "name": "cidades",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-animate": "^1.4.7",
+    "angular-loading-bar": "^0.8.0",
+    "angular-route": "^1.4.7",
+    "bootstrap": "^3.3.5",
+    "jquery": "^2.1.4"
+  }
+}

@@ -1,0 +1,34 @@
+[
+    {
+        "estado" : {"uf": "TO"},
+        "nome": "Araguaína"
+    },
+    {
+        "estado" : {"uf": "TO"},
+        "nome": "Gurupi"
+    },
+    {
+        "estado" : {"uf": "TO"},
+        "nome": "Palmas"
+    },
+    {
+        "estado" : {"uf": "TO"},
+        "nome": "Porto Nacional"
+    },
+    {
+        "estado" : {"uf": "TO"},
+        "nome": "Paraíso do Tocantins"
+    },
+    {
+        "estado" : {"uf": "SP"},
+        "nome": "São Paulo"
+    },
+    {
+        "estado" : {"uf": "RJ"},
+        "nome": "Rio de Janeiro"
+    },
+    {
+        "estado" : {"uf": "MG"},
+        "nome": "Belo Horizonte"
+    }
+]

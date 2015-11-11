@@ -1,0 +1,16 @@
+<h2>Cadastro de Estados</h2>
+
+<form class="form">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input  type="text" class="form-control" id="nome" ng-model="estado.nome" placeholder="Nome do Estado" required>
+    </div>
+    <div class="form-group">
+        <label for="uf">UF</label>
+        <input  type="text" class="form-control" id="uf" ng-model="estado.uf" placeholder="UF do Estado" required>
+    </div>
+    <div>
+        <button class="btn btn-primary" ng-click="salvar(estado)" type="button">Salvar</button>
+        <button class="btn btn-default" ng-click="cancelar()" type="button">Cancelar</button>
+    </div>
+</form>

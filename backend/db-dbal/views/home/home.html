@@ -1,0 +1,22 @@
+<h2>Esta é a tela inicial do gerenciador de estados e cidades.</h2>
+<p>Utilize o menu acima para acessar as funcionalidades do aplicativo.</p>
+<h2>Select em cascata</h2>
+<p>Uma das grandes dificuldades em aplicativos é criar os chamados "selects em cascata".
+    O contexto de dados de cidades (que pertencem a Estados) demonstra bem este tipo de
+    problema quando é necessário, por exemplo, com dois selects, selecionar as cidades
+    de um Estado selecionado anteriormente.</p>
+<p>O exemplo abaixo está consultando o banco de dados para realizar esta tarefa.</p>
+
+<select ng-model="estado" ng-options="estado.nome for estado in estados">
+    <option value="">Selecione um Estado</option>
+</select>
+
+<select ng-model="cidade" ng-disabled="!estado" ng-options="cidade.nome for cidade in estado.cidades">
+</select>
+
+<hr noshade></hr>
+
+<div>
+    <p>Estado selecionado: {{estado.nome}}</p>
+    <p>Cidade selecionada: {{cidade.nome}}</p>
+</div>
