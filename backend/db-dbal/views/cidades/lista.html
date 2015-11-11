@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-8">
             <a href="#/cidades/editor" class="btn btn-default">
-                <span aria-hidden="true" class="glyphicon glyphicon-plus"></span> 
+                <span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
                 Cadastrar
             </a>
         </div>
@@ -28,15 +28,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="cidade in cidades | filter:q | orderBy:estado.uf">
+        <tr ng-repeat="cidade in cidades | filter:q">
             <td>{{$index}}</td>
-            <td>{{cidade.estado.uf}}</td>
+            <td>{{cidade.ufEstado}}</td>
             <td>{{cidade.nome}}</td>
             <td>
-                <button class="btn btn-danger btn-xs" ng-click="excluir($index)" type="button">
+                <button class="btn btn-danger btn-xs" ng-click="excluir(cidade, $index)" type="button">
                     <span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
                 </button>
-                <button class="btn btn-default btn-xs" ng-click="editar($index)" type="button">
+                <button class="btn btn-default btn-xs" ng-click="editar(cidade)" type="button">
                     <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
                 </button>
             </td>

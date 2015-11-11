@@ -9,7 +9,7 @@ $app->get('/', function() {
 });
 
 $app->get('/home/{id}', function($id) use ($app) {
-    return "<h1>$id</h1>";
+    return "<h1>O valor do parâmetro é: $id</h1>";
 });
 
 $app->run();
