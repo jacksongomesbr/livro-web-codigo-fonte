@@ -9,8 +9,8 @@ $app = new Silex\Application();
 $app['debug'] = true;
 
 $app->get('/', function(Application $app, Request $request) {
-    print_r($request->query->get('id'));
-    return '<h1>home</h1>';
+    //print_r($request->query->get('id'));
+    return $app->json(array('resposta'=>'ok'));
 });
 
 $app->get('/home/{id}', function($id) use ($app) {

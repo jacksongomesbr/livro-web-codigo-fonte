@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="acessos-analytics">
+    <head>
+        <meta charset="utf-8">
+        <title>Angular Silex Request</title>
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="node_modules/angular-loading-bar/build/loading-bar.min.css" />
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+        <script src="node_modules/angular-loading-bar/build/loading-bar.min.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-controller="HomeController">
+        <div class="container">
+            <h1>Gerenciador de acessos a sites</h1>
+            <hr noshade></hr>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Cadastro de acesso</h2>
+                    <div>
+                        <input type="text" ng-model="acesso.nome" placeholder="Nome do site" required></input>
+                    </div>
+                    <div>
+                        <input type="text" ng-model="acesso.url" placeholder="URL do acesso" required></input>
+                    </div>
+                    <div>
+                        <input type="text" ng-model="acesso.data" placeholder="Data do acesso AAAA-MM-DD" required></input>
+                    </div>
+                    <div>
+                        <button ng-click="salvar()" class="btn btn-default">Salvar</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2>Estatísticas de acesso</h2>
+                    <div class="well">
+                        <h4>Quantidade de acessos por site</h4>
+                        <input type="text" ng-model="nomeDoSite" placeholder="Nome do site"></input> 
+                        <button ng-click="estatisticasPorNome()" class="btn btn-default">Consultar</button>
+                        <span><strong>Quantidade de acessos: </strong>{{quantidadeDeAcessosPorNome}}</span>
+                    </div>
+                    <div class="well">
+                        <h4>Quantidade de acessos por URL</h4>
+                        <input type="text" ng-model="url" placeholder="URL do acesso"></input> 
+                        <button ng-click="estatisticasPorURL()" class="btn btn-default">Consultar</button>
+                        <span><strong>Quantidade de acessos: </strong>{{quantidadeDeAcessosPorURL}}</span>
+                    </div>        
+                    <div class="well">
+                        <h4>Quantidade de acessos por intervalo de datas</h4>
+                        <input type="text" ng-model="data1" placeholder="Data inicial"></input> a 
+                        <input type="text" ng-model="data2" placeholder="Data final"></input> 
+                        <button ng-click="estatisticasPorIntervalo()" class="btn btn-default">Consultar</button>
+                        <span><strong>Quantidade de acessos: </strong>{{quantidadeDeAcessosPorIntervalo}}</span>
+                    </div>                     
+                </div>
+            </div>
+            
+            <hr noshade></hr>
+        </div>
+    </body>
+</html>
