@@ -1,0 +1,15 @@
+#listaDeTelefones {
+    padding: 0px;
+    list-style: none;
+}
+
+#listaDeTelefones li {
+    float: left;
+    margin-right: 10px;
+}
+#listaDeTelefones li .panel-body {
+    height: 250px;
+}
+#listaDeTelefones li .panel {
+    width: 200px;
+}
