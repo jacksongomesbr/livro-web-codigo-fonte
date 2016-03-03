@@ -320,4 +320,7 @@ angular.module('phonecat', [])
     }
 }        
         ];
+        
+        $scope.orderProp = 'android.os';
+        
     });

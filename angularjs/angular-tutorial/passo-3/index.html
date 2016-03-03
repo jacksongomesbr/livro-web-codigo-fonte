@@ -30,7 +30,7 @@
         </div>
         <div class="col-md-9">
             <ul id="listaDeTelefones">
-                <li ng-repeat="telefone in telefones | filter:query">
+                <li ng-repeat="telefone in telefones | filter:{name:query}">
                     <div class="panel panel-default">
                         <div class="panel-body">
                                 <img class="img-responsive" ng-src="{{telefone.images[0]}}">

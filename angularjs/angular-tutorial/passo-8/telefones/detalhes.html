@@ -1,0 +1,59 @@
+<h1>
+<a href="#/telefones" class="btn btn-default pull-right" role="button">
+    <i class="glyphicon glyphicon-th-large"></i> Lista
+</a>
+{{telefone.name}}
+</h1>
+<div class="row">
+    <div class="col-md-5">
+        <img class="img-responsive" ng-src="{{telefone.imageUrl}}">
+    </div>
+    <div class="col-md-7">
+        <p>{{telefone.description}}</p>
+        <h3>Mais fotos do telefone (clique para ampliar)</h3>
+        <div class="thumbs">
+            <ul class='listaDeMiniaturas'>
+                <li ng-repeat="image in telefone.images">
+                    <a href="" ng-click="mostrarImagem(image)">
+                        <img class="img-responsive" ng-src="{{image}}">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <h2>Detalhes e mais especificações técnicas</h2>
+    <p>{{telefone.additionalFeatures}}</p>
+    <div class="col-md-3">
+        <h3>Disponibilidade e redes</h3>
+        <ul>
+            <li ng-repeat="availability in telefone.availability">{{availability}}</li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h3>Bateria</h3>
+        <ul>
+            <li><strong>Standby</strong>: {{telefone.battery.standbyTime}}</li>
+            <li><strong>Conversação</strong>: {{telefone.battery.talkTime}}</li>
+            <li><strong>Tipo</strong>: {{telefone.battery.type}}</li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h3>Armazenamento e memória</h3>
+        <ul>
+            <li><strong>RAM</strong>: {{telefone.storage.ram}}</li>
+            <li><strong>Interna</strong>: {{telefone.storage.flash}}</li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h3>Conectividade</h3>
+        <ul>
+            <li><strong>Bluetooth</strong>: {{telefone.connectivity.bluetooth}}</li>
+            <li><strong>Rede</strong>: {{telefone.connectivity.cell}}</li>
+            <li><strong>GPS</strong>: {{telefone.connectivity.gps}}</li>
+            <li><strong>Infravermelho</strong>: {{telefone.connectivity.infrared}}</li>
+            <li><strong>Wi-fi</strong>: {{telefone.connectivity.wifi}}</li>
+        </ul>
+    </div>
+</div>
