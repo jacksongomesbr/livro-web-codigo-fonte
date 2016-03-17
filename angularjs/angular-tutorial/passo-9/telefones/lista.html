@@ -1,0 +1,31 @@
+<h1>Telefones</h1>
+<div class="row">
+    <div class="col-md-3">
+        <h3>Pesquisar</h3>
+        <input type="text" ng-model="query" placeholder="Pesquisar...">
+        <h3>Ordenar por</h3>
+        <select ng-model="orderProp">
+          <option value="name">Nome</option>
+          <option value="description">Descrição</option>
+        </select>
+    </div>
+    <div class="col-md-9">
+        <ul id="listaDeTelefones">
+            <li ng-repeat="telefone in telefones | filter:query | orderBy:orderProp">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                            <img class="img-responsive" ng-src="{{telefone.imageUrl}}">
+                            <div class="caption text-center">
+                                <h4>{{telefone.name}}</h4>
+                            </div>
+                    </div>
+                    <div class="panel-footer text-center">
+                        <a href="#/telefones/{{telefone.id}}" class="btn btn-default" role="button">
+                            <i class="glyphicon glyphicon-zoom-in"></i> Detalhes
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div> <!--/row-->

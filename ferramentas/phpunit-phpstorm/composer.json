@@ -1,0 +1,20 @@
+{
+  "name": "jacksongomesbr/phpunitphpstorm",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Jackson Gomes",
+      "email": "jackson.souza@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "": "src/"
+    }
+  },
+  "require": {
+    "phpunit/phpunit": "^4.8"
+  }
+}
