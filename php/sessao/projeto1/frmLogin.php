@@ -23,7 +23,7 @@
     </div>
     <form name="frmLogin" method="POST" action="login.php">
         <input type="tex]" name="textLogin"> </br>
-        <input type="password" name="txtSenha" value=""> </br>
+        <input type="password" name="textSenha" value=""> </br>
         <input type="submit" name="btnLogin" value="Login" >
     </form>
 
