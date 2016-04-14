@@ -1,0 +1,26 @@
+<h1>{{aluno.nome}}</h1>
+<p>Desempenho em <strong>{{turma.nome}} - Ano {{turma.ano}}, {{turma.disciplina}}</strong></p>
+
+<h2>Assiduidade</h2>
+<p>Aluno
+    <strong class="menor" ng-show="turma.avaliacao.ADD < media_add">{{turma.avaliacao.ADD}}</strong>
+    <strong class="maior" ng-show="turma.avaliacao.ADD >= media_add">{{turma.avaliacao.ADD}}</strong>
+    &nbsp;&nbsp;&nbsp;&nbsp;Média da turma: <strong>{{media_add}}</strong></p>
+
+<h2>Comunicação e trabalho em grupo</h2>
+<p>Aluno
+    <strong class="menor" ng-show="turma.avaliacao.COM < media_com">{{turma.avaliacao.COM}}</strong>
+    <strong class="maior" ng-show="turma.avaliacao.COM >= media_com">{{turma.avaliacao.COM}}</strong>
+    &nbsp;&nbsp;&nbsp;&nbsp;Média da turma: <strong>{{media_com}}</strong></p>
+
+<h2>Raciocínio lógico e matemático</h2>
+<p>Aluno
+    <strong class="menor" ng-show="turma.avaliacao.RAC < media_rac">{{turma.avaliacao.RAC}}</strong>
+    <strong class="maior" ng-show="turma.avaliacao.RAC >= media_rac">{{turma.avaliacao.RAC}}</strong>
+    &nbsp;&nbsp;&nbsp;&nbsp;Média da turma: <strong>{{media_rac}}</strong></p>
+
+<h2>Interpretação de texto e linguagem escrita</h2>
+<p>Aluno
+    <strong class="menor" ng-show="turma.avaliacao.INT < media_int">{{turma.avaliacao.INT}}</strong>
+    <strong class="maior" ng-show="turma.avaliacao.INT >= media_int">{{turma.avaliacao.INT}}</strong>
+    &nbsp;&nbsp;&nbsp;&nbsp;Média da turma: <strong>{{media_int}}</strong></p>

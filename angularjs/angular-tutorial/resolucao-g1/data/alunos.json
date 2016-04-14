@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "nome": "José da Silva Junior",
+        "pai": "11111111111",
+        "turmas": [
+            {
+                "nome": "A1-POR",
+                "ano": 1,
+                "disciplina": "Português",
+                "avaliacao" : {
+                    "ADD": 5,
+                    "COM": 3,
+                    "RAC": 8,
+                    "INT": 9
+                }
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nome": "Joana da Silva",
+        "pai": "11111111111",
+        "turmas": [
+            {
+                "nome": "A1-POR",
+                "ano": 1,
+                "disciplina": "Português",
+                "avaliacao" : {
+                    "ADD": 8,
+                    "COM": 9,
+                    "RAC": 10,
+                    "INT": 8
+                }
+            }
+        ]
+    }
+]

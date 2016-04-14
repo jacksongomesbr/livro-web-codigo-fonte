@@ -1,0 +1,14 @@
+[
+    {
+        "cpf": "11111111111",
+        "senha": "111",
+        "nome": "José",
+        "tipo": "pai"
+    },
+    {
+        "cpf": "22222222222",
+        "senha": "222",
+        "nome": "Maria",
+        "tipo": "professor"
+    }
+]

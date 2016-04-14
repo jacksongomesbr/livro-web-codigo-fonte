@@ -1,0 +1,11 @@
+<h1>Filhos</h1>
+<div ng-repeat="filho in filhos">
+    <h2>{{filho.nome}}</h2>
+    <ul>
+        <li ng-repeat="turma in filho.turmas">
+            <a href="#/dashboard/filhos/{{filho.id}}/{{turma.nome}}">
+                {{turma.nome}} - Ano {{turma.ano}}, {{turma.disciplina}}
+            </a>
+        </li>
+    </ul>
+</div>
