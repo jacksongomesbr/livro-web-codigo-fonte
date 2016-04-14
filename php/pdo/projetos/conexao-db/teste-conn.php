@@ -1,5 +1,5 @@
 <?php
-include_once ("classes/db/Connection.php");
+include_once ("classes/Connection.php");
 
 try {
     $conn = Connection::Open();
