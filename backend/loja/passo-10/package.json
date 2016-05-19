@@ -1,0 +1,24 @@
+{
+  "name": "lpweb-loja",
+  "version": "0.0.10",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "clear": "rmdir /S /Q node_modules",
+    "serve" : "hs -c-1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.1",
+    "angular-route": "^1.5.1",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.8.5"
+  }
+}
