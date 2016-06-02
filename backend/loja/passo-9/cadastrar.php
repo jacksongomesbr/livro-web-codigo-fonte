@@ -183,7 +183,6 @@ if ($post && !$cadastro_ok) { ?>
         <div class="form-group">
             <div class="checkbox">
                 <label><input type="checkbox" name="preferencias[]" value="eletronicos"> Eletrônicos</label>
-
             </div>
             <div class="checkbox">
                 <label><input type="checkbox" name="preferencias[]" value="informatica"> Informática</label>
