@@ -10,7 +10,7 @@ require('./home/modulo');
 global.$ = global.jQuery = require('jquery');
 require('bootstrap');
 
-angular.module('loja', ['ngRoute', 'ngStorage', 'moduloHome'])
+angular.module('loja', ['ngRoute', 'ngStorage', 'moduloHome', 'moduloProdutos'])
     .config(function($routeProvider){
         $routeProvider
             .when('/', {
@@ -28,6 +28,10 @@ angular.module('loja', ['ngRoute', 'ngStorage', 'moduloHome'])
             .when('/sobre', {
                 template: require('./home/sobre.html'),
                 controller: 'SobreController'
+            })
+            .when('/produtos/:id', {
+                template: require('./produtos/produto.html'),
+                controller: 'ProdutoController'
             })
             .otherwise({
                 redirectTo: '/'

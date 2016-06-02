@@ -26,7 +26,11 @@ $app->get('/produtos', function() use ($app) {
 
 $app->get('/produtos/{id}', function($id) use ($app) {
     $produto = Produtos::find($id);
-    return $app->json($produto);
+    if ($produto) {
+        return $app->json($produto);
+    } else {
+        return $app->abort(404);
+    }
 });
 
 $app->post('/clientes/validate', function(Request $request) use ($app) {

@@ -1,0 +1,22 @@
+<article class="produto">
+    <h1>{{produto.nome}}</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <img class="img-responsive" ng-src="{{'../imagens/' + produto.id + '.jpg'}}">
+        </div>
+        <div class="col-md-6">
+            <div>
+                <p>Preço especial</p>
+                <p class="preco">R$ {{produto.preco}}</p>
+                <p>
+                    <a href="adicionar-ao-carrinho.php?id=">Adicionar ao carrinho</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        {{produto.descricao}}
+    </div>
+</article>
