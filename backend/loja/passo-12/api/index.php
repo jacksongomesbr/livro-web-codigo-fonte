@@ -15,10 +15,6 @@ use Symfony\Component\HttpFoundation\Request;
 $app = new Application();
 $app->register(new AngularPostRequestServiceProvider());
 
-$app->get('/hello/{name}', function($name) use($app) {
-    return 'Hello '.$app->escape($name);
-});
-
 $app->get('/produtos', function() use ($app) {
     $produtos = Produtos::all();
     return $app->json($produtos);
@@ -39,7 +35,12 @@ $app->post('/clientes/validate', function(Request $request) use ($app) {
 
     $cliente = Clientes::validate($usuario, $senha);
 
-    return $app->json($cliente);
+    if ($cliente) {
+        return $app->json($cliente);
+    } else {
+        return $app->abort(401);
+    }
+
 });
 
 $app->run();

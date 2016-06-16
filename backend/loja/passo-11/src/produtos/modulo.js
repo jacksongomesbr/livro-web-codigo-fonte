@@ -2,7 +2,7 @@
 
 var config = require('../config');
 
-angular.module('moduloProdutos', [])
+module.exports = angular.module('moduloProdutos', [])
     .controller('ProdutoController', function($rootScope, $scope, $http, $routeParams){
         $rootScope.pageTitle = 'Loja - Produto';
         $http.get(config.API_ROOT + 'produtos/find.php?id=' + $routeParams.id)

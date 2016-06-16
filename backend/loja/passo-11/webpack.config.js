@@ -12,7 +12,15 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, '/src/index.html')
+            template: path.join(__dirname, '/src/index.html'),
+            inject: 'head',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true
+            }
         }),
         new ngAnnotatePlugin({ add: true }),
         new webpack.optimize.UglifyJsPlugin({
@@ -24,7 +32,7 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.js$/, loader: 'ng-annotate', exclude: /node_modules/},
-            {test: /\.html$/, loader: 'raw', exclude: /node_modules/},
+            {test: /\.html$/, loader: 'html', exclude: /node_modules/},
             /*{test: /\.css$/, loader: 'style!css', exclude: /node_modules/},*/
             {test: /\.scss$/, loader: 'style!css!sass', exclude: /node_modules/},
             {test: /\.css$/, loader: 'style!css?minimize!autoprefixer' },

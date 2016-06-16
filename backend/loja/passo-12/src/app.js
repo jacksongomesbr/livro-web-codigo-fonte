@@ -10,7 +10,7 @@ require('./home/modulo');
 global.$ = global.jQuery = require('jquery');
 require('bootstrap');
 
-angular.module('loja', ['ngRoute', 'ngStorage', 'moduloHome'])
+angular.module('loja', ['ngRoute', 'ngStorage', 'moduloHome', 'moduloProdutos'])
     .config(function($routeProvider){
         $routeProvider
             .when('/', {
@@ -29,6 +29,14 @@ angular.module('loja', ['ngRoute', 'ngStorage', 'moduloHome'])
                 template: require('./home/sobre.html'),
                 controller: 'SobreController'
             })
+            .when('/produtos/:id', {
+                template: require('./produtos/produto.html'),
+                controller: 'ProdutoController'
+            })
+            .when('/carrinho', {
+                template: require('./home/carrinho.html'),
+                controller: 'CarrinhoController'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -39,6 +47,10 @@ angular.module('loja', ['ngRoute', 'ngStorage', 'moduloHome'])
 
         if ($localStorage.cliente) {
             $rootScope.cliente = $localStorage.cliente;
+        }
+
+        if (!$localStorage.carrinho) {
+            $localStorage.carrinho = [];
         }
 
         $scope.sair = function() {

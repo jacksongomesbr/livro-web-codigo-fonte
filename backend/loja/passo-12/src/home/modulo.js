@@ -9,6 +9,9 @@ angular.module('moduloHome', ['ngStorage'])
         $http.get(config.API_ROOT + 'produtos')
             .then(function(result) {
                 $scope.produtos = result.data;
+                angular.forEach($scope.produtos, function(produto, i){
+                    produto.imagemUrl = require('../../imagens/' + produto.id + '.jpg');
+                });
             });
     })
     .controller('EntrarController', function($rootScope, $scope, $http, $location, $localStorage) {
@@ -41,4 +44,14 @@ angular.module('moduloHome', ['ngStorage'])
     })
     .controller('SobreController', function(){
 
+    })
+    .controller('CarrinhoController', function($rootScope, $scope, $http, $location, $localStorage) {
+        if (!$localStorage.carrinho) {
+            $localStorage.carrinho = [];
+        }
+        $scope.carrinho = $localStorage.carrinho;
+        $scope.total = 0;
+        for(var i = 0; i < $scope.carrinho.length; i++) {
+            $scope.total += $scope.carrinho[i].quantidade * $scope.carrinho[i].preco;
+        }
     });

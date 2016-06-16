@@ -1,0 +1,9 @@
+<h1>Carrinho</h1>
+
+<ul>
+    <li ng-repeat="produto in carrinho">
+        <a href="#/produtos/{{produto.id}}">{{produto.nome}} - {{produto.quantidade}}</a>
+    </li>
+</ul>
+
+<strong>{{total}}</strong>
