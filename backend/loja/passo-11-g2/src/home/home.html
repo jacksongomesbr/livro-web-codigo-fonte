@@ -1,0 +1,32 @@
+<div class="row">
+    <ul class="grid">
+        <li ng-repeat="produto in produtos">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img class="img-responsive" ng-src="{{produto.imagem}}">
+                    <div class="caption text-center">
+                        <h4>{{produto.nome}}</h4>
+                    </div>
+                </div>
+                <div class="panel-footer text-center">
+                    <a href="#/produtos/{{produto.id}}" class="btn btn-default" role="button">
+                        <i class="glyphicon glyphicon-zoom-in"></i> Detalhes
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Produtos populares</h3>
+
+        <div class="row" ng-repeat="produto in populares">
+            <div class="col-xs-1" style="font-style: bold; font-size: 40pt">{{$index + 1}}</div>
+            <div class="col-xs-3"><img class="img-responsive" ng-src="{{produto.imagem}}"></div>
+            <div class="col-xs-7"><h4>{{produto.nome}}</h4></div>
+        </div>
+    </div>
+</div>

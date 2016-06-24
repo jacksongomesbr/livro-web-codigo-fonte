@@ -1,0 +1,77 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '../node_modules/angular/angular-csp.css';
+/*
+@import './node_modules/font-awesome/css/font-awesome.css';
+@import './node_modules/angularjs-toaster/toaster.css';
+*/
+
+#navbar {
+    padding-left: 200px;
+}
+
+.rodape {
+    margin-top: 50px;
+    background-color: #fdfdfd;
+    min-height: 200px;
+    padding-top: 20px;
+    font-size: 10pt;
+    color: #aaa;
+}
+
+.rodape a {
+    color: #aaa;
+    text-decoration: underline;
+}
+
+.rodape a:hover {
+    color: #000;
+}
+
+.grid {
+    padding: 0px;
+    list-style: none;
+}
+
+.grid li {
+    float: left;
+    margin-right: 10px;
+}
+
+.grid li .panel-body {
+    height: 250px;
+}
+
+.grid li .panel {
+    width: 200px;
+}
+
+.grid-small li .panel-body {
+    height: 150px;
+}
+
+.grid-small li .panel {
+    width: 100px;
+}
+
+.produto .preco {
+    font-size: 40pt;
+    font-weight: bold;
+}
+
+fieldset {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.required {
+    color: red;
+}
+
+[ng:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}

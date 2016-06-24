@@ -1,0 +1,36 @@
+<h1>Entrar</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Já sou cadastrado</h3>
+        <p>
+            Se você já está cadastrado, informe suas credenciais a seguir.
+        </p>
+
+        <form class="form" name="formEntrar" ng-submit="formEntrar.$valid && login(formEntrar)">
+            <div ng-show="formEntrar.$invalid && formEntrar.$submitted" class="alert alert-danger alert-dismissible" role="alert">
+              <strong>Aviso!</strong> O usuário ou a senha estão incorretos. Corrija os dados e tente novamente.
+            </div>
+
+            <div class="form-group">
+                <label for="usuario">Usuário</label>
+                <input type="text" class="form-control" name="usuario" id="usuario" ng-model="usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" name="senha" id="senha" ng-model="senha" required>
+            </div>
+            <hr>
+            <div class="pull-right">
+                <button class="btn btn-primary" type="submit" ng-disabled="formEntrar.$invalid">Entrar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h3>Não estou cadastrado</h3>
+        <p>
+            Se você não está cadastrado, por favor, <a href="#/cadastrar">cadastre-se</a>
+            para utilizar as funcionalidades da loja de forma mais completa.
+        </p>
+    </div>
+</div>

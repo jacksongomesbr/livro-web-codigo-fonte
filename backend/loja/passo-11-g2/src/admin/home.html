@@ -1,0 +1,30 @@
+<h1>Produtos</h1>
+
+<div>
+    <a class="btn btn-default" href="#/admin/produtos/cadastrar">Cadastrar</a>
+</div>
+
+<br>
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th width="50">#</th>
+            <th>Nome</th>
+            <th width="300">Descrição</th>
+            <th width="100">Preço</th>
+            <th width="100">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="produto in produtos">
+            <td>{{produto.id}}</td>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.descricao}}</td>
+            <td>{{produto.preco}}</td>
+            <td>
+                <button class="btn btn-danger" ng-click="excluir(produto)">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
