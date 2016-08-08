@@ -1,0 +1,7 @@
+<h1>Eventos do mês de {{mes}}</h1>
+<ul>
+  <li *ngFor="let evento of eventos" >
+    <div class="evento-ativo" *ngIf="evento.id == 3">{{evento.id}} - {{evento.nome}}</div>
+    <div *ngIf="evento.id != 3">{{evento.id}} - {{evento.nome}}</div>
+  </li>
+</ul>
