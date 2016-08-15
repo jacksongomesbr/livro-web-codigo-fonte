@@ -1,0 +1,74 @@
+<h1>Eventos do mês de {{mes}}</h1>
+
+<button (click)="ativarCadastrar()" class="btn btn-default">Cadastrar evento</button>
+
+<div class="row">
+  <div class="col-md-6">
+    <form>
+      <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="filtro">
+      </div>
+    </form>
+
+    <ul>
+      <li *ngFor="let evento of listarEventos(filtro)" (click)="mostrarDetalhes(evento)" [class]="eventoEditar == evento ? 'evento-ativo' : ''">
+        {{evento.id}} - {{evento.nome}} - {{evento.cidade}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="eventoEditar && !cadastrar">
+      <h3>Detalhes do evento</h3>
+      <form>
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="eventoEditar.nome">
+        </div>
+        <div class="form-group">
+          <label>Estado</label>
+          <select name="estado" [(ngModel)]="eventoEditar.estado"  class="form-control" #estado>
+              <option value="">Selecione o Estado</option>
+              <option *ngFor="let estado of estados" [value]="estado">{{estado}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <label>Cidade</label>
+          <select name="cidade" [(ngModel)]="eventoEditar.cidade" [disabled]="!eventoEditar.estado" class="form-control">
+              <option value="">Selecione a cidade</option>
+              <option *ngFor="let cidade of getCidades(eventoEditar.estado)" [value]="cidade.nome">{{cidade.nome}}</option>
+            </select>
+        </div>
+      </form>
+      <button (click)="fecharEditor()" class="btn btn-default">Fechar</button> 
+      <button (click)="excluir()" class="btn btn-danger">Excluir</button>
+    </div>
+
+    <div *ngIf="cadastrar">
+      <h3>Cadastrar evento</h3>
+      <form>
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="eventoNovo.nome">
+        </div>
+        <div class="form-group">
+          <label>Estado</label>
+          <select name="estado" [(ngModel)]="eventoNovo.estado"  class="form-control" #estado>
+              <option value="">Selecione o Estado</option>
+              <option *ngFor="let estado of estados" [value]="estado">{{estado}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <label>Cidade</label>
+          <select name="cidade" [(ngModel)]="eventoNovo.cidade" [disabled]="!eventoNovo.estado" class="form-control">
+              <option value="">Selecione a cidade</option>
+              <option *ngFor="let cidade of getCidades(eventoNovo.estado)" [value]="cidade.nome">{{cidade.nome}}</option>
+            </select>
+        </div>
+      </form>
+      <button (click)="desativarCadastrar()" class="btn btn-default">Fechar</button> 
+      <button (click)="salvar()" class="btn btn-danger">Salvar</button>
+    </div>
+    
+  </div>
+</div>

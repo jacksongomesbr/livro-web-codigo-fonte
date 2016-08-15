@@ -1,0 +1,25 @@
+<h1>Eventos do mês de {{mes}}</h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <form>
+      <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="filtro">
+      </div>
+    </form>
+
+    <ul>
+      <li *ngFor="let evento of listarEventos(filtro)" (click)="mostrarDetalhes(evento)" [class]="eventoAtivo == evento ? 'evento-ativo' : ''">
+        {{evento.id}} - {{evento.nome}} - {{evento.cidade}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <div *ngIf="eventoAtivo">
+      <h3>Detalhes do evento</h3>
+      <p>{{eventoAtivo.nome}}</p>
+      <p>{{eventoAtivo.cidade}}</p>
+    </div>
+  </div>
+</div>

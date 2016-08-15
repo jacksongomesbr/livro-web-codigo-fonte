@@ -1,0 +1,9 @@
+my-app {
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.evento-ativo {
+  background: yellow;
+  font-weight: bold;
+}
