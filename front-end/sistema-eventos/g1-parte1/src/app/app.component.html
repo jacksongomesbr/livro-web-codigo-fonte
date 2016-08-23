@@ -1,0 +1,27 @@
+<h1>Usuários</h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <form>
+      <div class="form-group">
+        <label for="filtro">Filtro</label>
+        <input type="text" class="form-control" id="filtro" name="filtro" [(ngModel)]="filtro">
+      </div>
+    </form>
+
+    <ul>
+      <li *ngFor="let usuario of listar(filtro)" (click)="mostrarDetalhes(usuario)" [class]="usuarioAtivo == usuario ? 'ativo' : ''">
+        {{usuario.id}} - {{usuario.nome}} 
+        <button (click)="excluir(usuario)">Excluir</button>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <div *ngIf="usuarioAtivo">
+      <h3>Detalhes do evento</h3>
+      <p>Nome: {{usuarioAtivo.nome}}</p>
+      <p>Login: {{usuarioAtivo.login}}</p>
+      <p>E-mail: {{usuarioAtivo.email}}</p>
+    </div>
+  </div>
+</div>
