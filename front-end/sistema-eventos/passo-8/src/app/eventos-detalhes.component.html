@@ -1,0 +1,5 @@
+<div *ngIf="evento">
+    <h2>{{evento.nome}}</h2>
+    <p>Local: {{evento.cidade}} - {{evento.estado}}</p>
+    <button (click)="fechar()" class="btn btn-default">Fechar</button>
+</div>

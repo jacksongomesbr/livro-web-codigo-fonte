@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+    RewriteBase /livro-web-codigo-fonte/front-end/sistema-eventos/passo-9/api
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>

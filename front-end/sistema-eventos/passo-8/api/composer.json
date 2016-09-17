@@ -1,0 +1,22 @@
+{
+    "name": "jackson/api",
+    "authors": [
+        {
+            "name": "Jackson Gomes",
+            "email": "jackson.souza@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "" : "src/"
+        }
+    },
+    "require": {
+        "silex/silex": "^2.0",
+        "doctrine/dbal": "^2.5",
+        "jdesrosiers/silex-cors-provider": "^1.0",
+        "firebase/php-jwt": "^4.0",
+        "pimple/pimple": "^3.0",
+        "symfony/security": "^3.1"
+    }
+}

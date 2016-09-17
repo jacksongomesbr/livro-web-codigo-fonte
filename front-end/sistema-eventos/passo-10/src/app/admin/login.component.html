@@ -1,0 +1,10 @@
+<form class="form form-signin" (submit)="verificarLogin()">
+    <h2 class="form-signin-heading">Área administrativa</h2>
+    <label for="username" class="sr-only">Nome de usuário</label>
+    <input type="text" class="form-control" [(ngModel)]="username" name="username" id="username" placeholder="Nome de usuário" required autofocus>
+
+    <label for="password" class="sr-only">Senha</label>
+    <input type="password" class="form-control" [(ngModel)]="password" name="password" id="password" required>
+
+    <button type="submit" class="btn btn-lg btn-primary btn-block">Entrar</button>
+</form>

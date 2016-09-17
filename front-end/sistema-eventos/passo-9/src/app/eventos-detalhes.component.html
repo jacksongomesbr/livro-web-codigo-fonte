@@ -1,0 +1,19 @@
+<div *ngIf="errorMessage" class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Ops!</strong> {{errorMessage}}
+</div>
+
+<div *ngIf="evento" class="evento">
+    <h1>
+        {{evento.nome}}
+        <a routerLink="/eventos/novo/editor" class="pull-right btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Cadastrar evento</a>
+    </h1>
+    <p>Local: {{evento.cidade}} - {{evento.estado}}</p>
+    <p>De {{evento.data_inicio | date}} a {{evento.data_termino | date}}</p>
+    <p>Site: {{evento.site_url}}</p>
+    <br/>
+    <div class="descricao" [innerHtml]="evento.descricao"></div>
+</div>
+
+<button (click)="fechar()" class="btn btn-default">Fechar</button>
+<button *ngIf="evento" (click)="editar()" class="btn btn-primary">Editar</button>

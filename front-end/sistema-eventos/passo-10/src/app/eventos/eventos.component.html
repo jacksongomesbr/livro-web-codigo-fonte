@@ -1,0 +1,28 @@
+<h1>Eventos</h1>
+
+<div>
+    <form (ngSubmit)="atualizar()">
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Pesquisar por..." name="filtro"
+                       [(ngModel)]="filtro">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search" style="font-size: 20px"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="list-group">
+    <a [routerLink]="[evento.id]" class="list-group-item" *ngFor="let evento of eventos">
+        <h4 class="list-group-item-heading">{{evento.nome}}</h4>
+        <div class="list-group-item-text">
+            <p>Local: {{evento.cidade}} - {{evento.estado}}</p>
+            <p>De {{evento.data_inicio | date}} a {{evento.data_termino | date}}</p>
+            <p>Site: {{evento.site_url}}</p>
+        </div>
+    </a>
+</div>

@@ -1,0 +1,12 @@
+<h1>Gerenciador de Eventos
+
+<button (click)="cadastrar()" class="pull-right btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Cadastrar evento</button>
+
+</h1>
+
+
+<eventos-list *ngIf="modo == 'listar'" #lista (onEditar)="editar($event)" (onDetalhar)="detalhar($event)"></eventos-list>
+
+<eventos-editor *ngIf="modo == 'editar'" #editor [evento]='eventoSelecionado' (onFechar)="onFechar()"></eventos-editor>
+
+<eventos-detalhes *ngIf="modo == 'detalhar'" #detalhes [evento]='eventoSelecionado' (onFechar)="onFechar()"></eventos-detalhes>
