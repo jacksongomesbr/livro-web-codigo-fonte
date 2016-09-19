@@ -85,9 +85,24 @@ $app->get('/assinantes', function() use($app){
 
 $app->post('/assinantes', function(Request $request) use($app) {
     $assinante = json_decode($request->getContent());
-    return $app->json(array(
-        'data' => $assinante->nome
-    ));
+    if (isset($assinante->nome) && isset($assinante->email)) {
+        $db = Database::open();
+        try {
+            $r = $db->executeUpdate('INSERT INTO newsletter(nome, email) VALUES(?, ?)',
+                array($assinante->nome, $assinante->email));
+            if ($r > 0) {
+                return $app->json(array(
+                    'data' => $db->lastInsertId()
+                ));
+            } else {
+                throw new Exception();
+            }
+        } catch (Exception $e) {
+            return $app->abort(500);
+        }
+    } else {
+        return $app->abort(500);
+    }
 });
 
 $app->run();
