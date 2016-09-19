@@ -1,0 +1,15 @@
+<h4>Assine nossa newsletter!</h4>
+<form *ngIf="!exibir" (submit)="assinar()">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" name="nome" id="nome" [(ngModel)]="nome">
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+    </div>
+    <button type="submit" class="btn btn-default">Assinar</button>
+</form>
+<div *ngIf="exibir">
+    Obrigado, {{nome}} por ter assinado nossa newsletter!
+</div>

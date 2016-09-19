@@ -15,6 +15,8 @@ $app->register(new JDesrosiers\Silex\Provider\CorsServiceProvider(), array(
 $app->after($app["cors"]);
 $app['debug'] = true;
 
+// eventos
+
 $app->get('/eventos/', function(Request $request) use($app) {
     $filtro = $request->get('q', null);
     $db = Database::open();
@@ -66,6 +68,18 @@ $app->delete('/eventos/{id}', function($id) use($app) {
     $r = $db->executeUpdate('DELETE FROM eventos WHERE id = ?', array($id));
     return $app->json(array(
         'data' => $r
+    ));
+});
+
+
+// newsletter/assinantes
+
+$app->get('/assinantes', function() use($app){
+    $db = Database::open();
+    $query = $db->executeQuery('SELECT * FROM newsletter');
+    $assinantes = $query->fetchAll();
+    return $app->json(array(
+        'data' => $assinantes
     ));
 });
 

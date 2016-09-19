@@ -10,3 +10,20 @@
 <eventos-editor *ngIf="modo == 'editar'" #editor [evento]='eventoSelecionado' (onFechar)="onFechar()"></eventos-editor>
 
 <eventos-detalhes *ngIf="modo == 'detalhar'" #detalhes [evento]='eventoSelecionado' (onFechar)="onFechar()"></eventos-detalhes>
+
+<div class="row">
+    <div class="col-md-3">
+        <rodape></rodape>
+    </div>
+    <div class="col-md-3">
+        <mensagem></mensagem>
+    </div>
+    <div class="col-md-3">
+        <contato></contato>
+    </div>
+    <div class="col-md-3">
+        <newsletter></newsletter>
+    </div>
+</div>
+
+
