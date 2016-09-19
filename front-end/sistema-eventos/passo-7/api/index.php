@@ -83,4 +83,11 @@ $app->get('/assinantes', function() use($app){
     ));
 });
 
+$app->post('/assinantes', function(Request $request) use($app) {
+    $assinante = json_decode($request->getContent());
+    return $app->json(array(
+        'data' => $assinante->nome
+    ));
+});
+
 $app->run();
