@@ -83,6 +83,15 @@ $app->get('/assinantes', function() use($app){
     ));
 });
 
+$app->get('/assinantes/quantidade', function() use($app){
+    $db = Database::open();
+    $query = $db->executeQuery('SELECT count(*) as quantidade FROM newsletter');
+    $assinantes = $query->fetch();
+    return $app->json(array(
+        'data' => $assinantes['quantidade']
+    ));
+});
+
 $app->post('/assinantes', function(Request $request) use($app) {
     $assinante = json_decode($request->getContent());
     if (isset($assinante->nome) && isset($assinante->email)) {
