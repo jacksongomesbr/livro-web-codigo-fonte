@@ -11,6 +11,7 @@ import {NewsletterService} from "./newsletter.service";
 })
 export class NewsletterComponent {
     exibir:boolean = false;
+    erro:boolean = false;
     nome:string;
     email:string;
     quantidade:number;
@@ -27,7 +28,16 @@ export class NewsletterComponent {
     }
 
     assinar():void {
-        this.exibir = true;
+        this.assinantes.save(this.nome, this.email).subscribe(
+            retorno => {
+                this.exibir = true;
+                this.quantidade++;
+            },
+            error => {
+                this.erro = true;
+                console.log(error);
+            }
+        );
     }
 }
 

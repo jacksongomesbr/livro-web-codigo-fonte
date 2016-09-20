@@ -22,7 +22,7 @@
               <option *ngFor="let cidade of getCidades(evento.estado)" [value]="cidade.nome">{{cidade.nome}}</option>
             </select>
         </div>
-        <button type="submit" (click)="salvar()" class="btn btn-danger">Salvar</button>
+        <button type="submit" class="btn btn-danger">Salvar</button>
         <button type="button" (click)="fechar()" class="btn btn-default">Fechar</button>
     </form>
 </div>

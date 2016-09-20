@@ -1,5 +1,9 @@
 <h4>Assine nossa newsletter!</h4>
 <p>Atualmente, temos {{quantidade}} assinante(s)!</p>
+<div *ngIf="erro" class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Opa!</strong> Não foi possível salvar seus dados =(
+</div>
 <form *ngIf="!exibir" (submit)="assinar()">
     <div class="form-group">
         <label for="nome">Nome</label>
@@ -11,6 +15,7 @@
     </div>
     <button type="submit" class="btn btn-default">Assinar</button>
 </form>
-<div *ngIf="exibir">
-    Obrigado, {{nome}} por ter assinado nossa newsletter!
+<div *ngIf="exibir" class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Yeah!</strong> Obrigado, {{nome}}, por ter assinado nossa newsletter!
 </div>
