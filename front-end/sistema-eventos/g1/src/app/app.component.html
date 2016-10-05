@@ -1,0 +1,30 @@
+<h1>Gerenciador de Atendimentos de funcionários</h1>
+
+<div>
+    Filtrar: <input type="text" name="filtro" id="filtro" [(ngModel)]="filtro">
+</div>
+
+<ul>
+    <li *ngFor="let f of listar(filtro)">
+        {{f.matricula}},
+        {{f.nome}},
+        {{f.cpf}},
+        {{f.email}},
+        {{f.tempoDeServico}}
+        <button class="btn btn-primary" (click)="detalhar(f)" [disabled]="funcionario">Detalhar</button>
+    </li>
+</ul>
+
+<div *ngIf="funcionario">
+    <h2>{{funcionario.nome}}</h2>
+    <ul>
+        <li>Matrícula: {{funcionario.matricula}}</li>
+        <li>CPF: {{funcionario.cpf}}</li>
+        <li>E-mail: {{funcionario.email}}</li>
+        <li>Tempo de serviço: {{funcionario.tempoDeServico}}</li>
+    </ul>
+    <atendimentos-estatisticas
+            [funcionario]="funcionario.matricula"
+            (onFechar)="ocultar()"
+    ></atendimentos-estatisticas>
+</div>

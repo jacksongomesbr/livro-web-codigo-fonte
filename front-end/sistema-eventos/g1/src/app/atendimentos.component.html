@@ -1,0 +1,10 @@
+<h3>Estatísticas</h3>
+<ul *ngIf="estatistica">
+    <li>Reclamação: {{estatistica.reclamacao}}</li>
+    <li>Sugestão: {{estatistica.sugestao}}</li>
+    <li>Financeiro: {{estatistica.financeiro}}</li>
+    <li>Infraestrutura: {{estatistica.infraestrutura}}</li>
+    <li>Outros: {{estatistica.outros}}</li>
+</ul>
+
+<button (click)="fechar()">Fechar</button>
