@@ -2,13 +2,14 @@
  * Created by Jackson on 06/09/2016.
  */
 
-import { ModuleWithProviders }  from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {ModuleWithProviders}  from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
-import { EventosListComponent }      from './eventos-list.component';
-import { EventosDetalhesComponent } from './eventos-detalhes.component';
-import { EventosEditorComponent } from './eventos-editor.component';
+import {EventosListComponent}      from './eventos-list.component';
+import {EventosDetalhesComponent} from './eventos-detalhes.component';
+import {EventosEditorComponent} from './eventos-editor.component';
 import {SobreComponent} from "./sobre.component";
+import {HomeComponent} from "./home.component";
 
 const appRoutes: Routes = [
     {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
     {
         path: 'sobre',
         component: SobreComponent
+    },
+    {
+        path: '',
+        component: HomeComponent
     }
 ];
 

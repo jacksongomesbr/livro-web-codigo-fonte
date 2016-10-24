@@ -20,7 +20,7 @@ $app->register(new JDesrosiers\Silex\Provider\CorsServiceProvider(), array(
 $app->after($app["cors"]);
 $app['debug'] = true;
 $app['db'] = Database::open();
-
+/*
 $app['security.jwt'] = [
     'secret_key' => 'Very_secret_key',
     'life_time'  => 86400,
@@ -54,7 +54,7 @@ $app['security.firewalls'] = array(
 
 $app->register(new Silex\Provider\SecurityServiceProvider());
 $app->register(new Silex\Provider\SecurityJWTServiceProvider());
-
+*/
 $app->get('/eventos/', function(Request $request) use($app) {
     $filtro = $request->get('q', null);
     $db = $app['db'];

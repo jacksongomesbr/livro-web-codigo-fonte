@@ -43,6 +43,7 @@ export class EventosListComponent implements OnInit {
     }
 
     editar(evento:Evento) {
+        // /eventos/id/editor
         this.router.navigate(['/eventos', evento.id, 'editor'])
     }
 
@@ -65,6 +66,7 @@ export class EventosListComponent implements OnInit {
     }
 
     cadastrar() {
+        // /eventos/id/editor
         this.router.navigate(['/eventos', 'novo', 'editor']);
     }
 }
