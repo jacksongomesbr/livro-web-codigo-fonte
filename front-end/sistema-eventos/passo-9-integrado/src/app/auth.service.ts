@@ -1,0 +1,68 @@
+/**
+ * Created by Jackson on 24/10/2016.
+ */
+
+import {Injectable} from '@angular/core';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
+import {Observable}     from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
+@Injectable()
+export class AuthService {
+    public token: string;
+
+    constructor(private http: Http) {
+        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        this.token = currentUser && currentUser.token;
+    }
+
+    getToken() {
+        if (!this.loggedIn()) {
+            return null;
+        } else {
+            let user = JSON.parse(localStorage.getItem('currentUser'));
+            return user.token;
+        }
+    }
+
+    loggedIn() {
+        if (localStorage.getItem('currentUser')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    logon(username: string, password: string): Observable<boolean> {
+        let body = JSON.stringify({"email": username, "password": password});
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({headers: headers});
+
+        //noinspection TypeScriptUnresolvedFunction
+        return this.http.post('https://fabrica.ulbra-to.br/sistema-eventos/backend/api/index.php/authentication', body, options)
+            .map((response: Response) => {
+                let token = response.json() && response.json().access_token;
+                if (token) {
+                    this.token = token;
+                    localStorage.setItem('currentUser', JSON.stringify({username: username, token: token}));
+                    return true;
+                } else {
+                    return false;
+                }
+            })
+            .catch(this.handleError);
+
+    }
+
+    logout(): void {
+        this.token = null;
+        localStorage.removeItem('currentUser');
+    }
+
+    private handleError(error: any) {
+        let errMsg = (error.message) ? error.message :
+            error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+        console.error(errMsg);
+        return Observable.throw(errMsg);
+    }
+}

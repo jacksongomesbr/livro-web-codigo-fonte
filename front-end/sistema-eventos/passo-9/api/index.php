@@ -138,4 +138,22 @@ $app->post('/login', function(Request $request) use ($app){
     return $app->json($response, ($response['success'] == true ? Response::HTTP_OK : Response::HTTP_BAD_REQUEST));
 });
 
+$app->post('/file-upload', function(Request $request) use ($app) {
+	$path = __DIR__.'/uploads/';
+	$file = $request->files->get('file');
+	$originalFileName = $file->getClientOriginalName();
+	$info = pathinfo($originalFileName);
+	$ext = $info['extension'];
+	$basename =  basename($originalFileName,'.'.$ext);
+	$filename = uniqid($basename . '-') . '.' . $ext;
+	$file->move($path, $filename);
+
+	return $app->json(array(
+		'filename' => $filename,
+		'original_filename' => $originalFileName,
+		'info' => $info,
+		'_files' => $_FILES
+	));
+});
+
 $app->run();

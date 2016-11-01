@@ -1,0 +1,78 @@
+<h1>Criar conta</h1>
+
+<form class="form" (submit)="salvar()" #contaForm="ngForm">
+
+    <div [hidden]="!error" class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Erro!</strong> {{error_message}}
+    </div>
+
+    <div class="form-group-lg">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control input-lg" name="nome" id="nome" [(ngModel)]="nome" required autofocus>
+    </div>
+
+    <div class="form-group-lg">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control input-lg" name="email" id="email" [(ngModel)]="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" class="form-control" name="senha" id="senha" [(ngModel)]="senha" required>
+    </div>
+
+    <div class="form-group">
+        <label for="dataDeNascimento">Data de nascimento</label>
+        <input type="date" class="form-control" name="dataDeNascimento" id="dataDeNascimento" [(ngModel)]="dataDeNascimento" required>
+    </div>
+
+
+    <div class="form-group">
+        <p class="control-label"><b>Sexo</b></p>
+        <label class="radio-inline"><input type="radio" id="sexo-f" name="sexo" [(ngModel)]="sexo" value="F"> Feminino</label>
+        <label class="radio-inline"><input type="radio" id="sexo-m" name="sexo" [(ngModel)]="sexo" value="M"> Masculino</label>
+    </div>
+
+    <div class="form-group">
+        <label>Foto</label>
+        <input type="file" class="form-control" name="foto" id="foto" #foto (change)="upload()">
+    </div>
+
+    <h2>Endereço</h2>
+
+    <div class="form-group">
+        <label for="logradouro">Logradouro</label>
+        <input type="text" class="form-control" name="logradouro" id="logradouro" [(ngModel)]="logradouro" required>
+    </div>
+
+    <div class="form-group">
+        <label for="complemento">Complemento</label>
+        <input type="text" class="form-control" name="complemento" id="complemento" [(ngModel)]="complemento" required>
+    </div>
+
+    <div class="form-group">
+        <label for="cep">CEP</label>
+        <input type="text" class="form-control" name="cep" id="cep" [(ngModel)]="cep" required>
+    </div>
+
+
+    <div class="form-group">
+        <label for="estado">Estado</label>
+        <select class="form-control" name="estado" id="estado" [(ngModel)]="estado" #selectEstado required>
+            <option *ngFor="let est of estados" [value]="est.Id">{{est.Nome}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <select class="form-control" name="cidade" id="cidade" [(ngModel)]="cidade" required [disabled]="!estado">
+            <option *ngFor="let cid of getCidades(estado)" [value]="cid.Id">{{cid.Nome}}</option>
+        </select>
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-lg btn-primary right" [disabled]="!contaForm.form.valid">Salvar</button>
+</form>

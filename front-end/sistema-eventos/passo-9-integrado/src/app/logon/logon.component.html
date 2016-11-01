@@ -1,0 +1,16 @@
+<form class="form form-signin" (submit)="entrar(logonForm)" #logonForm="ngForm">
+    <h2 class="form-signin-heading">Área administrativa</h2>
+
+    <div [hidden]="!error" class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Aviso!</strong> Nome de usuário ou e-mail incorretos. Corrija-os e tente novamente.
+    </div>
+
+    <label for="username" class="sr-only">Nome de usuário ou e-mail</label>
+    <input type="text" class="form-control" [(ngModel)]="username" name="username" id="username" placeholder="Nome de usuário" required autofocus>
+
+    <label for="password" class="sr-only">Senha</label>
+    <input type="password" class="form-control" [(ngModel)]="password" name="password" id="password" placeholder="Senha" required>
+
+    <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="!logonForm.form.valid">Entrar</button>
+</form>
