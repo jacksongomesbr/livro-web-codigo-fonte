@@ -25,7 +25,7 @@ export const eventosAdminRouting = [
         component: EventosAdminComponent
     },
     {
-        path: 'eventos/:id',
+        path: 'eventos/:id/editor',
         component: EventosEditorComponent
     }
 ];

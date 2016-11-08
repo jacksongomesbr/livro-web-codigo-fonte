@@ -42,7 +42,7 @@ export class EventosAdminComponent implements OnInit {
 
     editar(evento: any) {
         // /eventos/id/editor
-        this.router.navigate(['/eventos', evento.Id, 'editor'])
+        this.router.navigate(['/admin/eventos', evento.Id, 'editor'])
     }
 
     detalhar(evento: any) {

@@ -13,6 +13,8 @@
     <p>Site: {{evento.site_url}}</p>
     <br/>
     <div class="descricao" [innerHtml]="evento.Descricao"></div>
+
+    <pre>{{evento|json}}</pre>
 </div>
 
 <button (click)="fechar()" class="btn btn-default">Fechar</button>

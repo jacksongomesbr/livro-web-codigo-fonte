@@ -9,4 +9,5 @@ export class EnderecoModel {
     cep: string;
     logradouro: string;
     cidade: CidadeModel;
+    idCidade: number;
 }

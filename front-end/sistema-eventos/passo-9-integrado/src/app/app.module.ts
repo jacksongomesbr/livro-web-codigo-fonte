@@ -13,6 +13,9 @@ import {ServiceBase} from "./service-base.service";
 import {CidadesService} from "./cidades.service";
 import {EstadosService} from "./estados.service";
 import {FileUploaderComponent} from "./file-uploader.component";
+import {EstadoModel} from "./estado.model";
+import {CidadeModel} from "./cidade.model";
+import {EnderecoModel} from "./endereco.model";
 
 @NgModule({
     imports: [
@@ -32,7 +35,10 @@ import {FileUploaderComponent} from "./file-uploader.component";
         AuthService,
         ServiceBase,
         CidadesService,
-        EstadosService
+        EstadosService,
+        EstadoModel,
+        CidadeModel,
+        EnderecoModel
     ],
     bootstrap: [
         AppComponent

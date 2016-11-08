@@ -7,28 +7,18 @@ import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable}     from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {ServiceBase} from "./service-base.service";
-import {CidadeModel} from "./cidade.model";
 import {AuthService} from "./auth.service";
 
 @Injectable()
-export class CidadesService extends ServiceBase {
+export class EnderecosService extends ServiceBase {
     constructor(http: Http, auth: AuthService) {
         super(http, auth);
     }
 
-    all(): Observable<CidadeModel[]> {
-        let options = super.getRequestOptions();
-
-        //noinspection TypeScriptUnresolvedFunction
-        return this.http.get(this.apiUrl + '/cities', options)
-            .map(super.extractData)
-            .catch(super.handleError);
-    }
-
-    get(id: number): Observable<CidadeModel> {
+    get(id: number): Observable<any> {
         let options = super.getRequestOptions();
         //noinspection TypeScriptUnresolvedFunction
-        return this.http.get(this.apiUrl + '/cities/' + id, options)
+        return this.http.get(this.apiUrl + '/addresses/' + id, options)
             .map(super.extractData)
             .catch(super.handleError);
     }

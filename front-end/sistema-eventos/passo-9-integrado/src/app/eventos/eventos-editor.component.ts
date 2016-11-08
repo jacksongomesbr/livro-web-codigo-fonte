@@ -82,7 +82,7 @@ export class EventosEditorComponent implements OnInit {
     }
 
     fechar() {
-        this.router.navigate(['/eventos'])
+        this.router.navigate(['/admin/eventos'])
     }
 
 }

@@ -25,4 +25,12 @@ export class EstadosService extends ServiceBase {
             .catch(super.handleError);
     }
 
+    get(id: number) : Observable<EstadoModel> {
+        let options = super.getRequestOptions();
+        //noinspection TypeScriptUnresolvedFunction
+        return this.http.get(this.apiUrl + '/states/' + id, options)
+            .map(super.extractData)
+            .catch(super.handleError);
+    }
+
 }

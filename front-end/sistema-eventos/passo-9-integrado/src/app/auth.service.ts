@@ -40,7 +40,7 @@ export class AuthService {
 
         //noinspection TypeScriptUnresolvedFunction
         return this.http.post('https://fabrica.ulbra-to.br/sistema-eventos/backend/api/index.php/authentication', body, options)
-            .map((response: Response) => {
+            .map(function(response: Response) {
                 let token = response.json() && response.json().access_token;
                 if (token) {
                     this.token = token;

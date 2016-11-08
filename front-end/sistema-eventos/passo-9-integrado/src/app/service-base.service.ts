@@ -11,6 +11,7 @@ import {AuthService} from "./auth.service";
 @Injectable()
 export class ServiceBase {
     protected apiUrl: string = 'https://fabrica.ulbra-to.br/sistema-eventos/backend/api/index.php';
+    // protected apiUrl: string = 'http://localhost/sistema-eventos-backend/api/index.php';
 
     constructor(protected http: Http, protected auth: AuthService) {
     }

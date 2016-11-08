@@ -148,6 +148,8 @@ $app->post('/file-upload', function(Request $request) use ($app) {
 	$filename = uniqid($basename . '-') . '.' . $ext;
 	$file->move($path, $filename);
 
+
+
 	return $app->json(array(
 		'filename' => $filename,
 		'original_filename' => $originalFileName,
@@ -155,5 +157,6 @@ $app->post('/file-upload', function(Request $request) use ($app) {
 		'_files' => $_FILES
 	));
 });
+
 
 $app->run();

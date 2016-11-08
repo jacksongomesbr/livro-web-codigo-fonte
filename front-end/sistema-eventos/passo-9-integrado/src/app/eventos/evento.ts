@@ -1,8 +1,10 @@
+import {EnderecoModel} from "../endereco.model";
 export class Evento {
     public id: number;
     public nome: string;
     public cidade: string;
     public estado: string;
+    public endereco: EnderecoModel;
 
     constructor(id: number, nome: string, cidade: string, estado: string = '') {
         this.id = id;
