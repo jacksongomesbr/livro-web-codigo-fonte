@@ -17,7 +17,7 @@ export class CriarContaService extends ServiceBase {
 
     save(nome: string, email: string, senha: string, sexo: string,
         dataDeNascimento: string, enderecoCEP: string, enderecoLogradouro: string,
-        enderecoComplemento:string, enderecoIdCidade: number) : Observable<any> {
+        enderecoComplemento:string, enderecoIdCidade: number, imagem: string) : Observable<any> {
 
         let options = super.getRequestOptions();
 
@@ -26,11 +26,12 @@ export class CriarContaService extends ServiceBase {
             'email' : email,
             'senha' : senha,
             'sexo': sexo,
-            'dtNascimento': dataDeNascimento,
+            'dataDeNascimento': dataDeNascimento,
             'cepEndereco': enderecoCEP,
             'logradouroEndereco': enderecoLogradouro,
             'complementoEndereco': enderecoComplemento,
-            'idCidade': enderecoIdCidade
+            'idCidade': enderecoIdCidade,
+            'imagem': imagem
         };
 
         return this.http.post(this.apiUrl + '/account', JSON.stringify(conta), options)

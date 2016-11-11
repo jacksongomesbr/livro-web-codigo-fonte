@@ -33,6 +33,13 @@ export class AuthService {
         }
     }
 
+    getCurrentUser() {
+        if (!this.loggedIn())
+            return null;
+        let user = JSON.parse(localStorage.getItem('currentUser'));
+        return user;
+    }
+
     logon(username: string, password: string): Observable<boolean> {
         let body = JSON.stringify({"email": username, "password": password});
         let headers = new Headers({'Content-Type': 'application/json'});
@@ -41,10 +48,17 @@ export class AuthService {
         //noinspection TypeScriptUnresolvedFunction
         return this.http.post('https://fabrica.ulbra-to.br/sistema-eventos/backend/api/index.php/authentication', body, options)
             .map(function(response: Response) {
-                let token = response.json() && response.json().access_token;
-                if (token) {
+                let r = response.json();
+                if (r && r.access_token) {
+                    let token = r.access_token;
                     this.token = token;
-                    localStorage.setItem('currentUser', JSON.stringify({username: username, token: token}));
+                    localStorage.setItem('currentUser', JSON.stringify({
+                        username: username,
+                        id: r.id,
+                        isAdminEvento: r.isAdminEvento,
+                        isAdmGeral: r.isAdmGeral,
+                        token: token
+                    }));
                     return true;
                 } else {
                     return false;
