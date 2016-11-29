@@ -55,8 +55,9 @@ export class AuthService {
                     localStorage.setItem('currentUser', JSON.stringify({
                         username: username,
                         id: r.id,
-                        isAdminEvento: r.isAdminEvento,
-                        isAdmGeral: r.isAdmGeral,
+                        // TODO: checar como está retorno da API
+                        AdminEvento: r.isAdminEvento,
+                        AdmGeral: r.isAdmGeral,
                         token: token
                     }));
                     return true;

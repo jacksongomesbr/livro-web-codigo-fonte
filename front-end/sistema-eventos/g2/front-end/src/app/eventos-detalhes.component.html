@@ -1,0 +1,20 @@
+<div *ngIf="errorMessage" class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Ops!</strong> {{errorMessage}}
+</div>
+
+<div *ngIf="evento" class="evento">
+    <h1>
+        {{evento.nome}}
+        <button (click)="inscricoes(evento.id)" class="pull-right btn btn-default">Inscrições</button>
+    </h1>
+    <p>De {{evento.dataDeInicio | date}} a {{evento.dataDeTermino | date}}</p>
+    <p>Preço da inscrição: R$ {{evento.precoDaInscricao}}</p>
+    <p>Número estimado de inscritos: {{evento.numeroEstimadoDeInscritos}}</p>
+    <div class="well">
+        <h3>Estatísticas do evento</h3>
+        <p>Quantidade de inscritos: {{quantidadeDeInscritos}}</p>
+        <p>Total recebido: R$ {{totalRecebido}}</p>
+        <p>Porcentagem recebida em relação ao estimado: {{porcentagemJaRecebida   }}%</p>
+    </div>
+</div>

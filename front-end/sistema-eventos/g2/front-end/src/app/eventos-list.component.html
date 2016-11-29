@@ -1,0 +1,28 @@
+<h1>
+    Gerenciador de Eventos
+</h1>
+
+<table class="table table-hover table-bordered table-striped">
+    <thead>
+        <tr>
+            <th width="40">#</th>
+            <th>Nome</th>
+            <th>Datas</th>
+            <th>Inscrição (R$)</th>
+            <th width="140">Gerenciar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let evento of eventos">
+            <td>{{evento.id}}</td>
+            <td>{{evento.nome}}</td>
+            <td>{{evento.dataDeInicio}} - {{evento.dataDeTermino}}</td>
+            <td>{{evento.precoDaInscricao}}</td>
+            <td>
+                <button class="btn btn-default btn-sm" (click)="gerenciar(evento.id)">
+                    <i class="glyphicon glyphicon-zoom-in"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

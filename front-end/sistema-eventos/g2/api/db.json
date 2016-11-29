@@ -1,0 +1,96 @@
+{
+  "eventos": [
+    {
+      "id": 1,
+      "nome": "ENCOINFO 2016",
+      "dataDeInicio": "2016-05-01",
+      "dataDeTermino": "2016-05-05",
+      "precoDaInscricao": 50,
+      "numeroEstimadoDeInscritos": 200
+    },
+    {
+      "id": 2,
+      "nome": "ENCOINFO 2017",
+      "dataDeInicio": "2017-05-01",
+      "dataDeTermino": "2017-05-05",
+      "precoDaInscricao": 60,
+      "numeroEstimadoDeInscritos": 300
+    }
+  ],
+  "pessoas": [
+    {
+      "id": 1,
+      "nome": "Paulo",
+      "sexo": "M",
+      "email": "paulo@servidor.com"
+    },
+    {
+      "id": 2,
+      "nome": "Maria",
+      "sexo": "F",
+      "email": "maria@servidor.com"
+    },
+    {
+      "id": 3,
+      "nome": "Pedro",
+      "sexo": "M",
+      "email": "pedro@servidor.com"
+    },
+    {
+      "id": 4,
+      "nome": "José",
+      "sexo": "M",
+      "email": "jose@servidor.com"
+    },
+    {
+      "id": 5,
+      "nome": "Adriana",
+      "sexo": "F",
+      "email": "adriana@servidor.com"
+    }
+  ],
+  "inscritos": [
+    {
+      "id": "1",
+      "eventoId": 1,
+      "pessoaId": 1,
+      "data": "2016-01-01",
+      "dataDePagamento": "2016-11-28"
+    },
+    {
+      "id": "2",
+      "eventoId": 1,
+      "pessoaId": 2,
+      "data": "2016-01-02",
+      "dataDePagamento": "2016-11-28"
+    },
+    {
+      "id": "4",
+      "eventoId": 1,
+      "pessoaId": 4,
+      "data": "2016-01-03",
+      "dataDePagamento": "2016-11-28"
+    },
+    {
+      "id": 5,
+      "eventoId": 1,
+      "pessoaId": 5,
+      "data": "2016-01-03",
+      "dataDePagamento": "2016-01-10"
+    },
+    {
+      "id": 6,
+      "eventoId": 2,
+      "pessoaId": 1,
+      "data": "2016-10-01",
+      "dataDePagamento": null
+    },
+    {
+      "id": "7",
+      "eventoId": 2,
+      "pessoaId": 2,
+      "data": "2016-10-11",
+      "dataDePagamento": "2016-01-10"
+    }
+  ]
+}

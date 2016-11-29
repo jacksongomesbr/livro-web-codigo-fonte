@@ -1,0 +1,38 @@
+<h1 *ngIf="evento">{{evento.nome}}
+
+    <button (click)="telaDoEvento(evento.id)" class="pull-right btn btn-default">Tela do evento</button>
+
+</h1>
+<h2>
+    Gerenciador de inscrições
+</h2>
+
+<table class="table table-hover table-bordered table-striped">
+    <thead>
+        <tr>
+            <th width="40">#</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Data da inscrição</th>
+            <th>Data do pagamento</th>
+            <th width="300">Gerenciar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let inscricao of inscricoes">
+            <td>{{inscricao.id}}</td>
+            <td>{{inscricao.pessoa.nome}}</td>
+            <td>{{inscricao.pessoa.email}}</td>
+            <td>{{inscricao.data}}</td>
+            <td>{{inscricao.dataDePagamento}}</td>
+            <td>
+                <button class="btn btn-default btn-sm" (click)="confirmarPagamento(inscricao.id)">
+                    Confirmar pagamento
+                </button>
+                <button class="btn btn-default btn-sm" (click)="excluirInscricao(inscricao.id)">
+                    Excluir inscrição
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
